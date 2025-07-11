@@ -1,0 +1,25 @@
+% CVEL112
+%
+% Channel velocity data retrieved from Johns Hopkins Turbulence database at:
+% https://turbulence.pha.jhu.edu/Channel_Flow.aspx
+%
+% This is a 112x112x112 subset of the overall simulation domain 
+%
+% The matlab interface "getData" with the following options was used:
+
+% data options
+dataset             = 'channel'; 
+variable            = 'velocity';   % 3d velocity
+temporal_method     = 'none';       % time interpolation
+spatial_method      = 'none';       % space interpolation
+spatial_operator    = 'field';
+
+% domain size
+fac         = 7;
+nx          = fac*16;
+ny          = fac*16;
+nz          = fac*16;
+n_points    = nx * ny * nz;
+x_points    = linspace(3.0, 3.3, nx);
+y_points    = linspace(-0.9, -0.6, ny);
+z_points    = linspace(0.2, 0.5, nz);
